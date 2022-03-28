@@ -447,7 +447,7 @@ footer {
   h1::before {
     content: "";
     display: block;
-    width: 3em;
+    width: 2em;
     height: 1px;
     background-color: var(--clr-neutral);
     position: absolute;
@@ -459,7 +459,7 @@ footer {
   }
 
   .intro__body h1 {
-    font-size: 2.75rem;
+    font-size: 4.25rem;
   }
 
   .intro__body p {

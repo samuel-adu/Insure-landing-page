@@ -12,7 +12,7 @@
   --clr-neutral: hsl(0, 0%, 98%);
 
   --fs-h1: 2.75rem;
-  --fs-h2: 2.75rem;
+  --fs-h2: 2.5rem;
   --fs-h3: 1.5rem;
   --fs-h4: 1rem;
 
@@ -24,9 +24,11 @@
   --fw-body-regular: 400;
 }
 
-/* base styles */
-html {
+/* || base styles ===============================================*/
+body {
+  font-family: var(--ff-body);
   font-size: 16px;
+  font-weight: var(--fw-body-regular);
 }
 
 img,
@@ -51,12 +53,7 @@ li {
   list-style: none;
 }
 
-section,
-header {
-  margin-bottom: 6rem;
-}
-
-/* typography */
+/* || typography =================================================*/
 h1,
 h2,
 h3,
@@ -90,7 +87,11 @@ p {
   margin-bottom: 1.5rem;
 }
 
-/* utilities */
+/* || utilities ==================================================*/
+.container {
+  padding-inline: 2rem;
+}
+
 .btn {
   border: 2px solid var(--clr-neutral);
   padding: 1em 1.5em;
@@ -116,6 +117,7 @@ p {
   color: var(--clr-primary);
 }
 
+/* || Navigation ======================================== */
 .navbar {
   display: flex;
   align-items: center;
@@ -126,8 +128,10 @@ p {
 }
 
 .nav {
-  background: url("images/bg-pattern-mobile-nav.svg") no-repeat bottom
-    var(--clr-primary);
+  background-image: url("images/bg-pattern-mobile-nav.svg");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-color: var(--clr-primary);
   position: fixed;
   background-size: contain;
   right: 0;
@@ -174,9 +178,10 @@ p {
   width: 100%;
 }
 
-.container {
-  padding-left: 2em;
-  padding-right: 2em;
+/* || General Styles =============================================*/
+section,
+header {
+  margin-bottom: 6rem;
 }
 
 header {
@@ -197,8 +202,26 @@ header {
   padding-bottom: 4em;
 }
 
+.intro__body p {
+  font-family: 700;
+}
+
 .about {
+  padding-top: 2rem;
   text-align: center;
+  position: relative;
+}
+
+.about h2::before {
+  content: "";
+  display: block;
+  width: 4em;
+  height: 1px;
+  background-color: var(--clr-primary);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 
 .how-we-work {
@@ -215,6 +238,14 @@ header {
 .cards {
   display: grid;
   grid-gap: 1rem;
+}
+
+.card img {
+  margin-bottom: 1.5rem;
+}
+
+.card p {
+  color: var(--clr-secondary);
 }
 
 footer {
@@ -343,7 +374,7 @@ footer {
   .intro {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2em;
+    gap: 1rem;
     align-items: center;
     justify-content: center;
     position: relative;
@@ -376,7 +407,7 @@ footer {
   }
 
   .how-we-work h2 {
-    width: 385px;
+    flex: 0.465;
   }
 
   footer {
@@ -397,7 +428,7 @@ footer {
 
 @media screen and (min-width: 800px) {
   .container {
-    max-width: 1100px;
+    max-width: 1110px;
   }
 
   .navbar {
@@ -423,29 +454,27 @@ footer {
     top: 6rem;
   }
 
-  .about h2::before {
-    content: "";
-    display: block;
-    width: 3em;
-    height: 1px;
-    background-color: var(--clr-primary);
-    position: absolute;
-    top: 0;
-  }
-
-  .about h2 {
-    padding-top: 1em;
-    position: relative;
-  }
-
   .intro__image {
     top: 6rem;
+  }
+
+  .intro__body h1 {
+    font-size: 2.75rem;
+  }
+
+  .intro__body p {
+    font-size: 15px;
   }
 
   .about {
     text-align: left;
     padding-top: 6em;
-    position: relative;
+    margin-top: 12rem;
+  }
+
+  .about h2::before {
+    left: 0;
+    transform: translate(0, 0);
   }
 
   .cards {

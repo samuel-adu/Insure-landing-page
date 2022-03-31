@@ -272,12 +272,12 @@ header::after {
   color: var(--clr-secondary);
 }
 
-footer {
+.main-footer {
   background-color: var(--clr-neutral);
   background-image: url("images/bg-pattern-footer-mobile.svg");
   background-position: top;
   background-repeat: no-repeat;
-  padding: 4em 0;
+  padding-block: 2rem;
 }
 
 .footer {
@@ -323,16 +323,6 @@ footer {
 
 .social__list-item {
   padding: 2em 0.5em;
-}
-
-.attribution {
-  text-align: center;
-  font-size: 0.5rem;
-}
-
-.attribution a {
-  font-size: 0.5rem;
-  color: hsl(228, 45%, 44%);
 }
 
 @media screen and (min-width: 600px) {
@@ -449,7 +439,7 @@ footer {
     flex: 0.7125;
   }
 
-  footer {
+  .main-footer {
     background-image: url("images/bg-pattern-footer-desktop.svg");
     background-position: top left -10%;
   }
